@@ -22,7 +22,23 @@
 
 ## 装 / 卸
 
-装（仓库自带的安全安装器，**不跑 pnpm** —— 免得把 profile 里手做的 junction 一起冲掉）：
+**方式一：从 GitHub 装（使用者最省事）**
+
+在 DSH 侧栏「**插件 → 添加插件**」里填：
+
+```
+github:qinguan-0813/dsh-snip
+```
+
+点安装、再点「立即启用」即可。命令行等价写法：
+
+```powershell
+dsh plugin --profile <你的 profile> add github:qinguan-0813/dsh-snip
+```
+
+**方式二：本仓库自带的安全安装器**
+
+（本仓库自带的安全安装器，**不跑 pnpm** —— 免得把 profile 里手做的 junction 一起冲掉）：
 
 ```powershell
 # 在仓库根目录
