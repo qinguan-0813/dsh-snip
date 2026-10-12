@@ -1,0 +1,25 @@
+# dsh-snip 的组合包 patch：一行，携带全部配置。
+#
+# ⚠️ 在 profile 的 cordis.patch.yml 里按 id 覆盖这一行时，patch 会**替换整份 config**，
+#    要保留的键请全部重述。界面上的「隐藏窗口」勾选框会覆盖 hideWindow，
+#    并落盘到 $DSH_HOME/dsh-snip.json（不写回这里）。
+- insert:
+    - id: dsh-snip
+      name: dsh-snip
+      config:
+        # 截图时把 DSH 窗口临时藏起来（画面里就没有 DSH 了）。
+        # ★ 只用 SW_HIDE / SW_SHOW，绝不碰窗口尺寸 —— 最大化/全屏状态保持原样。
+        # 默认开：绝大多数时候要截的是 DSH 背后的东西；想连 DSH 一起截就在界面上取消勾选。
+        hideWindow: true
+
+        # 截哪块屏幕：window = DSH 窗口所在的那块显示器；primary = 主显示器；all = 所有显示器拼起来。
+        screen: window
+
+        # 唤起截图的快捷键（DSH 窗口有焦点时生效）。留空 = 只留按钮，不挂快捷键。
+        hotkey: Alt+A
+
+        # 抓屏用的 PowerShell 解释器绝对路径。留空 = 自动探测（先 pwsh 7，再 Windows PowerShell）。
+        powershell: ''
+
+        # 打印调试日志。
+        debug: false

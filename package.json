@@ -1,0 +1,70 @@
+{
+  "name": "dsh-snip",
+  "version": "0.1.1",
+  "type": "module",
+  "description": "微信式区域截图插件：框选屏幕、标注（矩形/椭圆/箭头/画笔/马赛克）、一键贴进 DSH 输入框；可选截图时隐藏 DSH 窗口，且不破坏窗口的最大化/全屏状态。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "screenshot",
+    "snip",
+    "annotation",
+    "win32",
+    "windows"
+  ],
+  "license": "MIT",
+  "author": "qinguan-0813",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qinguan-0813/dsh-snip.git"
+  },
+  "homepage": "https://github.com/qinguan-0813/dsh-snip#readme",
+  "bugs": {
+    "url": "https://github.com/qinguan-0813/dsh-snip/issues"
+  },
+  "os": [
+    "win32"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "index.js",
+  "icon": "./icon.svg",
+  "meta": {
+    "title": "截图 dsh-snip",
+    "description": "微信式区域截图 + 标注工具栏，可选截图时隐藏 DSH 窗口，结果直接贴进输入框。"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    },
+    "compatibility": {
+      "node": ">=20",
+      "dsh": ">=0.2.0-rc.1"
+    }
+  },
+  "files": [
+    "index.js",
+    "client",
+    "host",
+    "tools",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "icon.svg"
+  ]
+}
